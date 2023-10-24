@@ -65,7 +65,7 @@
             <label>
                 Сообщите Ваше имя, капитан:
                 <input type="text" name="name">
-                <button  onclick="window.location='/name?name=' + $('input[name=name]').val()">Начать игру</button>
+                <button  onclick="setName()">Начать игру</button>
             </label>
         </div>
     </c:if>
