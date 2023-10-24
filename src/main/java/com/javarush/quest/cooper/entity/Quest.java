@@ -40,7 +40,7 @@ public class Quest implements Serializable {
     }
 
     public static Quest getQuestsFromJson() throws IOException {
-        Path questFile = Path.of("C:\\DEVELOP\\JAVA\\quest\\quest.json");
+        Path questFile = Path.of(QuestConstants.QUEST_FILE);
 
         if (Files.isRegularFile(questFile)){
             String json = Files.readString(questFile);
