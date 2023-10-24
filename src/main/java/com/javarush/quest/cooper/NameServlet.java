@@ -15,9 +15,8 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 @WebServlet(name = "NameServlet", value = "/name")
 public class NameServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession currentSession = req.getSession(true);
-
         Quest quest = Quest.getQuest(currentSession);
         quest.setName(getName(req));
 
