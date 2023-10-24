@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import url('reset.css');
+@import url('fonts.css');
+body {
+    position: relative;
+    height: 100vh;
+}
+h1 {
+    font: 22px/22px 'OpenSansBold';
+    margin: 0 10px;
+    text-align: center;
+}
+h3 {
+    font: 16px/18px 'OpenSansBold';
+    margin: 0 0 10px;
+}
+table {
+    width: 100%;
+}
+button {
+    display: block;
+    width: 150px;
+    height: 30px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input[type=text] {
+    width: 150px;
+    height: 30px;
+    margin: 0 10px;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+}
+input[type=radio] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.quest {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 800px;
+    height: 300px;
+    margin: auto;
+    padding: 20px;
+    font: 14px/18px 'OpenSansRegular';
+    text-align: left;
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+.results {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.results button {
+    width: 100%;
+    margin: 10px auto 0;
+}
+/* RESULTS */
+.results td {
+    padding: 0 10px;
+    font: 12px/16px 'OpenSansRegular';
+}
+.results td:last-child {
+    text-align: right
+}
+.results button {
+    margin-bottom: 0;
+}
+/* PROLOG */
+.prolog {
+    margin: 30px auto 0;
+    font: 13px/15px 'OpenSansRegular';
+}
+.prolog p {
+    margin-bottom: 10px;
+}
+.prolog button {
+    display: inline-block;
+    margin: 0;
+}
+/* MAIN */
+.main {
+    width: 600px;
+    margin: 70px auto 0;
+}
+.main p {
+    margin-bottom: 10px;
+    font: 18px/24px 'OpenSansSemiBoldItalic';
+}
+.main p.win,
+.main p.lose {
+    font-family: 'OpenSansExtraBoldItalic', serif;
+    margin-bottom: 30px;
+}
+.main p.win {
+    color: blue;
+}
+.main p.lose {
+    color: red;
+}
+.main label {
+    display: block;
+    font: 14px/30px 'OpenSansRegular';
+}
