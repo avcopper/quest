@@ -1,0 +1,88 @@
+{
+    "quests": [
+        {
+            "message": "Ты потерял память. Принять вызов НЛО?",
+            "options": [
+                {
+                    "answer": "Отклонить вызов",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Ты отклонил вызов."
+                    }
+                },
+                {
+                    "answer": "Почесать башку",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Надо чаще мыться."
+                    }
+                },
+                {
+                    "answer": "Принять вызов",
+                    "isWin": false,
+                    "isLose": false,
+                    "result": null
+                }
+            ]
+        },
+        {
+            "message": "Ты принял вызов. Поднимаешься на мостик к капитану?",
+            "options": [
+                {
+                    "answer": "Отказаться подниматься на мостик",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Ты не пошел на переговоры."
+                    }
+                },
+                {
+                    "answer": "Почесать зад",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Надо мыть, а не проверивать."
+                    }
+                },
+                {
+                    "answer": "Подняться на мостик",
+                    "isWin": false,
+                    "isLose": false,
+                    "result": null
+                }
+            ]
+        },
+        {
+            "message": "Ты поднялся на мостик. Кто ты?",
+            "options": [
+                {
+                    "answer": "Солгать о себе",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Твою ложь разоблачили."
+                    }
+                },
+                {
+                    "answer": "Конь в пальто",
+                    "isWin": false,
+                    "isLose": true,
+                    "result": {
+                        "message": "Слишком дерзкий. Тебя растворили в кислоте."
+                    }
+                },
+                {
+                    "answer": "Рассказать правду о себе",
+                    "isWin": true,
+                    "isLose": false,
+                    "result": {
+                        "message": "Тебя вернули домой."
+                    }
+                }
+            ]
+        }
+    ]
+}
+
