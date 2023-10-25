@@ -17,13 +17,20 @@ h3 {
 table {
     width: 100%;
 }
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    line-height: 250px;
+}
 button {
     display: block;
     width: 150px;
     height: 30px;
     margin: 10px 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    /*color: #ffffff;*/
+    border: 2px solid #0d6efd;
+    background-color: #e0ecff;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -52,19 +59,24 @@ input[type=radio] {
     padding: 20px;
     font: 14px/18px 'OpenSansRegular';
     text-align: left;
-    background-color: #f3f3f3;
+    background-color: #e0ecff;
     overflow: hidden;
 }
 .results {
     position: absolute;
     right: 5px;
     top: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #0d6efd;
+    background-color: #ffffff;
     padding: 10px;
+}
+.results .name {
+    font-weight: bold;
 }
 .results button {
     width: 100%;
     margin: 10px auto 0;
+    padding: 0 20px;
 }
 /* RESULTS */
 .results td {
