@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.javarush</groupId>
-    <artifactId>my-questOld</artifactId>
+    <artifactId>quest</artifactId>
     <version>1.0</version>
-    <name>my-questOld</name>
+    <name>quest</name>
     <packaging>war</packaging>
 
     <properties>
