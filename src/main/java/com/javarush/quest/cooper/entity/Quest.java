@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpSession;
+import com.javarush.quest.cooper.exceptions.AppException;
 import com.javarush.quest.cooper.constants.QuestConstants;
 
 public class Quest implements Serializable {
@@ -21,14 +22,14 @@ public class Quest implements Serializable {
     private Quest() {
     }
 
-    public static Quest getQuest(HttpSession currentSession) throws IOException {
+    public static Quest getQuest(HttpSession currentSession) throws IOException, AppException {
         Quest quest = null;
         Object questObj = currentSession.getAttribute(QuestConstants.QUEST);
 
         if (questObj != null) {
             if (Quest.class != questObj.getClass()) {
                 currentSession.invalidate();
-                throw new RuntimeException(QuestConstants.SESSION_IS_BROKEN);
+                throw new AppException(QuestConstants.SESSION_IS_BROKEN);
             }
 
             quest = (Quest) questObj;
@@ -39,14 +40,25 @@ public class Quest implements Serializable {
         return quest != null ? quest : getQuestsFromJson();
     }
 
-    public static Quest getQuestsFromJson() throws IOException {
-        Path questFile = Path.of(QuestConstants.QUEST_FILE);
+    public static Quest getQuestsFromJson() throws IOException, AppException {
+        Path questFile = getQuestFile();
 
-        if (Files.isRegularFile(questFile)){
+        if (questFile != null){
             String json = Files.readString(questFile);
             return new Gson().fromJson(json, Quest.class);
         }
-        else throw new RuntimeException(QuestConstants.SETTINGS_IS_BROKEN);
+        else throw new AppException(QuestConstants.QUEST_FILE_IS_LOST);
+    }
+
+    private static Path getQuestFile() {
+        Path questFile = Path.of(QuestConstants.QUEST_FILE);
+        if (Files.isRegularFile(questFile)) return questFile;
+
+        String currentDir = Objects.requireNonNull(Quest.class.getResource("/")).getPath().substring(1);
+        Path projectDir = Path.of(currentDir).getParent().getParent().getParent().getParent();
+        questFile = Path.of(projectDir + "\\quest.json");
+
+        return Files.isRegularFile(questFile) ? questFile : null;
     }
 
     public ArrayList<QuestItem> getQuests() {
